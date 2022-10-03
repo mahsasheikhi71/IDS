@@ -1,0 +1,10 @@
+reset;
+model MoZhangSh.mod;
+data MoZhangSh.dat;
+
+option solver cplex;
+solve;
+display Q;
+display y;
+display alf; 
+display ds;

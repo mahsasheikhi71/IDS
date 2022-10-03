@@ -1,0 +1,68 @@
+set Prod := Prod1	Prod2	;           
+set Item := Item1	Item2	; 
+set scenario := m1 m2 ;
+
+param mean:=1 100  2 100   3 100   4 100   5 100  6  100  7  100  8  100  ;
+param sigma:=1 30  2 30  3 30  4 30  5 30  6  30  7  30  8  30 ;
+param SetupCost:=
+Prod1	100
+Prod2	95
+
+ ;
+
+
+param ProdCost: 
+	1	2	3	4	5	6	7	8 :=
+Prod1	4	4	4	4	4	4	4	4	
+Prod2	3.8	3.8	3.8	3.8	3.8	3.8	3.8	3.8
+
+;
+param SubstitutionCost:=
+[*,*,1]:Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0	
+
+
+[*,*,2]:	Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0	
+
+[*,*,3]:	Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0
+
+[*,*,4]:	Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0
+
+[*,*,5]:	Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0
+
+[*,*,6]:	Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0
+
+[*,*,7]:	Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0
+
+[*,*,8]:	Item1	Item2	:=
+Prod1	0	0.1	
+Prod2	0.1	0
+
+
+;
+									
+
+param ShortageCost :
+	1	2	3	4	5	6	7	8	:=
+Item1	11.93333333	11.93333333	11.93333333	11.93333333  	11.93333333	11.93333333	11.93333333	11.93333333	
+Item2	11.33666667	11.33666667	11.33666667	11.33666667	11.33666667	11.33666667	11.33666667	11.33666667
+;
+param OverageCost :
+	1	2	3	4	5	6	7	8	:=
+Prod1	0.8	    0.8	    0.8	    0.8     0.8 	0.8 	0.8     -2.6
+Prod2	0.76	0.76	0.76	0.76	0.76	0.76	0.76	-2.47
+
+;

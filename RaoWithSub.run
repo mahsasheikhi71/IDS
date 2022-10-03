@@ -1,0 +1,26 @@
+reset;
+model RaoWithSub.mod;
+data RaoWithSub.dat;
+option solver cplex;
+param n=1;
+param obj{1..n};
+param tim;
+#let tim:=0;
+#for {i in 1..n}{
+# reset data demand;
+ solve;
+# let obj[i]:=total_cost;
+# let tim := tim+ _solve_time; 
+# }
+display obj; 
+#param mean1=1/30*sum{i in 1..n}(obj[i]);
+#display mean1; 
+#param var;
+#let var:=0;
+#for{i in 1..n}{
+# let var:=var+(obj[i]-mean1)*(obj[i]-mean1);
+#}
+#let var :=var/29;
+#let tim := tim/60;
+#display var;
+#display tim;
